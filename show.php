@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Booking</title>
+    <title>Booked Permit Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="author" />
@@ -11,9 +11,11 @@
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="./assets/images/favicon.ico">
-    <link href="../../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
-        <link href="../../plugins/lightpick/lightpick.css" rel="stylesheet" />
 
+    <!-- DataTables -->
+    <link href="./plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="./plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    
     <!-- App css -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="./assets/css/jquery-ui.min.css" rel="stylesheet">
@@ -29,7 +31,7 @@
     <div class="topbar">
 
         <!-- LOGO -->
-          <div class="topbar-left">
+        <div class="topbar-left">
             <a href="main.php" class="logo">
                 <span>
                     <img src="./assets/images/mountain.png" alt="logo-large" class="logo-lg logo-light" style=" height: 50px;">
@@ -191,90 +193,94 @@
             </li>
 
             <li>
-                <a href="bookedpermit.php"><i class="ti-server"></i><span>Booked Permit</span>
+                <a href="bookedpermit.php"><i class="ti-server"></i><span>Booked Permit </span>
                          <span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
             </li>
         </ul>
     </div>
     <!-- end left-sidenav-->
-    
+
     <div class="page-wrapper">
-   
-            <div class="page-content">
+        <!-- Page Content-->
+        <div class="page-content">
 
-                <div class="container-fluid">
-                    <!-- Page-Title -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="page-title-box">
-                                <h4 class="page-title">Booking</h4>
-                            </div><!--end page-title-box-->
-                        </div><!--end col-->
-                    </div>
-                    <!-- end page title end breadcrumb -->
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card card-eco">
-                                <div class="card-body">  
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <h4 class="title-text mt-0">All Booked</h4>
-                                            <h3 class="font-weight-semibold mb-1">5</h3>
-                                        </div><!--end col-->
-                                        <div class="col-4 text-center align-self-center">
-                                            <!-- <span class="card-eco-icon">👳🏻</span> -->
-                                            <i class="dripicons-user-group card-eco-icon  align-self-center"></i>  
-                                        </div>  <!--end col-->                                                                           
-                                    </div> <!--end row-->
-                                    <div class="bg-pattern"></div>  
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->
-                        <div class="col-lg-4">
-                            <div class="card card-eco">
-                                <div class="card-body">  
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <h4 class="title-text mt-0">Approved</h4>
-                                            <h3 class="font-weight-semibold mb-1">4</h3>
-                                        </div><!--end col-->
-                                        <div class="col-4 text-center align-self-center">
-                                            <!-- <span class="card-eco-icon">🛒</span> -->
-                                            <i class="mdi mdi-account-multiple-check card-eco-icon  align-self-center"></i>  
-                                        </div>  <!--end col-->                                                                           
-                                    </div> <!--end row-->
-                                    <div class="bg-pattern"></div> 
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->
-                        <div class="col-lg-4">
-                            <div class="card card-eco">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <h4 class="title-text mt-0">Rejected</h4>
-                                            <h3 class="font-weight-semibold mb-1">1</h3>
-                                            
-                                        </div><!--end col-->
-                                        <div class="col-4 text-center align-self-center">
-                                            <!-- <span class="card-eco-icon">🎲</span> -->
-                                            <i class="mdi mdi-account-remove card-eco-icon  align-self-center"></i>  
-                                        </div>  <!--end col-->                                                                           
-                                    </div> <!--end row-->
-                                    <div class="bg-pattern"></div> 
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->
-                       
-                    </div><!--end row-->
-                    
-                </div><!-- container -->
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="float-right">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="main.php">Main</a></li>
+                                    <li class="breadcrumb-item active">Booked Permit Details</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Booked Permit Details</h4>
+                        </div><!--end page-title-box-->
+                    </div><!--end col-->
+                </div>
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+  <h4 class="mt-0 header-title">Hikers Details</h4>
 
-                <footer class="footer text-center text-sm-left">
-                    &copy; 2020 Crovex <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
-                </footer><!--end footer-->
-            </div>
-           
+                                    <form>
+                                        <div class="row">
+                                           <div class="form-group col-lg-6">
+                                            <label for="exampleInputEmail1">Name</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Test">
+                                        </div>
+                                           <div class="form-group col-lg-6">
+                                            <label for="exampleInputEmail1">IC</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="12345678">
+                                        </div>
+                                        </div>
+                                        <div class="row">
+
+                                        <div class="form-group col-lg-6">
+                                            <label for="exampleInputEmail1">Phone Number</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0129282123">
+                                        </div>
+                                           <div class="form-group col-lg-6">
+                                            <label for="exampleInputEmail1">Payment (RM)</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="100">
+                                        </div>
+                                        </div>
+
+<hr>
+  <h4 class="mt-0 header-title">Booked Place</h4>
+                                        <div class="row">
+<div class="form-group col-lg-12">
+                                            <label for="exampleInputEmail1">Place</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gunung Ganang">
+                                        </div>
+                                           <div class="form-group col-lg-6">
+                                            <label for="exampleInputEmail1">Time</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="8:30 AM">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label for="exampleInputPassword1">Date</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="30/11/2020">
+                                        </div>
+                                        </div>
+
+                                        
+                                        <div class="row col-lg-12">
+                                        <button type="button" class="btn btn-gradient-danger">Cancel</button>
+                                        </div>
+                                        
+                                    </form>                                           
+                                </div><!--end row-->  
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->  
+
+            </div><!-- container -->
+
+            
         </div>
         <!-- end page content -->
     </div>
@@ -283,28 +289,29 @@
 
 
 
-   <!-- jQuery  -->
-   <script src="./assets/js/jquery.min.js"></script>
-   <script src="./assets/js/bootstrap.bundle.min.js"></script>
-   <script src="./assets/js/metismenu.min.js"></script>
-   <script src="./assets/js/waves.js"></script>
-   <script src="./assets/js/feather.min.js"></script>
-   <script src="./assets/js/jquery.slimscroll.min.js"></script>
-   <script src="./assets/js/jquery-ui.min.js"></script>
+    <!-- jQuery  -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/metismenu.min.js"></script>
+    <script src="./assets/js/waves.js"></script>
+    <script src="./assets/js/feather.min.js"></script>
+    <script src="./assets/js/jquery.slimscroll.min.js"></script>
+    <script src="./assets/js/jquery-ui.min.js"></script>
 
-   <script src="./plugins/moment/moment.js"></script>
-   <script src="./plugins/apexcharts/apexcharts.min.js"></script>
-   <script src="./plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-   <script src="./plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-   <script src="./plugins/chartjs/chart.min.js"></script>
-   <script src="./plugins/chartjs/roundedBar.min.js"></script>
-   <script src="./plugins/lightpick/lightpick.js"></script>
-   <script src="./assets/pages/jquery.sales_dashboard.init.js"></script>
+    <script src="./plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="./assets/pages/jquery.helpdesk-dashboard.init.js"></script>
 
+    <script src="./assets/js/app.js"></script>
 
-   <!-- App js -->
-   <script src="./assets/js/app.js"></script>
-   
+    <!-- Required datatable js -->
+    <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="./plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- App js -->
+    <script src="./assets/js/app.js"></script>
+    <script>
+        $('#datatable').DataTable();
+    </script>
 
 </body>
 

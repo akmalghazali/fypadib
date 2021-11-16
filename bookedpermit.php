@@ -159,7 +159,7 @@
                         <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
                         <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Lock screen</a>
                         <div class="dropdown-divider mb-0"></div>
-                        <a class="dropdown-item" href="#"><i class="ti-power-off text-muted mr-2"></i> Logout</a>
+                        <a class="dropdown-item" href="/"><i class="ti-power-off text-muted mr-2"></i> Logout</a>
                     </div>
                 </li>
             </ul>
@@ -236,8 +236,9 @@
                                         <th>Name</th>
                                         <th>IC</th>
                                         <th>Phone Number</th>
-                                        <th>Payment (RM)</th>
+                                        <th>Booked Place</th>
                                         <th>Status</th>
+                                        <th>Guiders</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -247,18 +248,24 @@
                                     <tr>
                                         <td>
                                             <p class="d-inline-block align-middle mb-0">
-                                                <a href="" class="d-inline-block align-middle mb-0 product-name">Test</a> 
+                                                <a href="show.php" class="d-inline-block align-middle mb-0 product-name">Test</a> 
                                                 <br> 
                                             </p>
                                         </td>
                                         <td>12345678</td>
                                         <td>0129282123</td>
-                                        <td>100
-                                        </td>
+                                        <td>Gunung Kinabalu</td>
                                         <td>
                                             <select class="form-control">
                                                 <option>Approved</option>
                                                 <option>Rejected</option>
+                                            </select>
+                                        </td>
+                                        
+                                        <td>
+                                            <select class="form-control">
+                                                <option>Ali</option>
+                                                <option>Abu</option>
                                             </select>
                                         </td>
                                         <td>
@@ -275,12 +282,19 @@
                                         </td>
                                         <td>12345678</td>
                                         <td>0129282123</td>
-                                        <td>100
-                                        </td>
-                                        <td>
+                                        <td>Gunung Dayang Bunting</td>
+                                         <td>
                                             <select class="form-control">
                                                 <option>Approved</option>
                                                 <option>Rejected</option>
+                                            </select>
+                                        </td>
+                                     
+                                    
+                                        <td>
+                                            <select class="form-control">
+                                                <option>Ali</option>
+                                                <option>Abu</option>
                                             </select>
                                         </td>
                                         <td>
@@ -297,12 +311,19 @@
                                         </td>
                                         <td>12345678</td>
                                         <td>0129282123</td>
-                                        <td>100
-                                        </td>
-                                        <td>
+                                        <td>Gunung Ganang</td>
+                                         <td>
                                             <select class="form-control">
                                                 <option>Approved</option>
                                                 <option>Rejected</option>
+                                            </select>
+                                        </td>
+                                       
+
+                                        <td>
+                                            <select class="form-control">
+                                                <option>Ali</option>
+                                                <option>Abu</option>
                                             </select>
                                         </td>
                                         <td>
@@ -319,12 +340,17 @@
                                         </td>
                                         <td>12345678</td>
                                         <td>0129282123</td>
-                                        <td>100
-                                        </td>
-                                        <td>
+                                        <td>Bukit Bukau</td>
+                                         <td>
                                             <select class="form-control">
                                                 <option>Approved</option>
                                                 <option>Rejected</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control">
+                                                <option>Ali</option>
+                                                <option>Abu</option>
                                             </select>
                                         </td>
                                         <td>
@@ -341,12 +367,18 @@
                                         </td>
                                         <td>12345678</td>
                                         <td>0129282123</td>
-                                        <td>100
+                                        <td>Bukit Tinggi Rendah</td>
+                                         <td>
+                                            <select class="form-control">
+                                                <option>Approved</option>
+                                                <option>Rejected</option>
+                                            </select>
                                         </td>
+
                                         <td>
                                             <select class="form-control">
-                                                <option>Rejected</option>
-                                                <option>Approved</option>
+                                                <option>Ali</option>
+                                                <option>Abu</option>
                                             </select>
                                         </td>
                                         <td>
