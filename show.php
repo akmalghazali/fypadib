@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'head.php'?>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Booked Permit Details</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="./assets/images/favicon.ico">
-
-    <!-- DataTables -->
-    <link href="./plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="./plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    
-    <!-- App css -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/jquery-ui.min.css" rel="stylesheet">
-    <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-</head>
 
 <body class="dark-sidenav">
 
@@ -212,6 +188,7 @@
                             <div class="float-right">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="main.php">Main</a></li>
+                                    <li class="breadcrumb-item"><a href="bookedpermit.php">Booked Permit</a></li>
                                     <li class="breadcrumb-item active">Booked Permit Details</li>
                                 </ol>
                             </div>
@@ -224,54 +201,104 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-  <h4 class="mt-0 header-title">Hikers Details</h4>
-
+                                
                                     <form>
+                                    <h4 class="mt-0 header-title">Permit Details</h4>
                                         <div class="row">
-                                           <div class="form-group col-lg-6">
-                                            <label for="exampleInputEmail1">Name</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Test">
-                                        </div>
-                                           <div class="form-group col-lg-6">
-                                            <label for="exampleInputEmail1">IC</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="12345678">
-                                        </div>
-                                        </div>
-                                        <div class="row">
-
                                         <div class="form-group col-lg-6">
-                                            <label for="exampleInputEmail1">Phone Number</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0129282123">
-                                        </div>
-                                           <div class="form-group col-lg-6">
-                                            <label for="exampleInputEmail1">Payment (RM)</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="100">
-                                        </div>
-                                        </div>
-
-<hr>
-  <h4 class="mt-0 header-title">Booked Place</h4>
-                                        <div class="row">
-<div class="form-group col-lg-12">
+                                            <label for="exampleInputEmail1">Payment</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="RM 100" readonly>
+                                        </div>  
+                                        <div class="form-group col-lg-6">
                                             <label for="exampleInputEmail1">Place</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gunung Ganang">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gunung Ganang" readonly>
                                         </div>
                                            <div class="form-group col-lg-6">
                                             <label for="exampleInputEmail1">Time</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="8:30 AM">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="8:30 AM" readonly>
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label for="exampleInputPassword1">Date</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="30/11/2020">
-                                        </div>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="30/11/2020" readonly>
                                         </div>
 
-                                        
-                                        <div class="row col-lg-12">
-                                        <button type="button" class="btn btn-gradient-danger">Cancel</button>
+                                        <div class="form-group col-lg-6">
+                                            <label for="exampleInputPassword1">Guider</label>
+                                            <select class="form-control" name="guider">
+                                                <option>Ali</option>
+                                                <option>Abu</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-lg-6">
+                                            <label for="exampleInputPassword1">Status</label>
+                                            <select class="form-control" name="status">
+                                                <option>Approved</option>
+                                                <option>Rejected</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <a href="bookedpermit.php">
+                                        <button type="button" class="btn btn-gradient-danger">Cancel</button></a>
+                                            <a href="bookedpermit.php">
+                                        <button type="button" class="btn btn-gradient-success">Submit</button></a>
+
                                         </div>
                                         
-                                    </form>                                           
+                                    </form>   
+
+<hr>
+</br>
+
+                                        <h4 class="mt-0 header-title">Hikers Details</h4>
+
+                                    <table class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>IC</th>
+                                        <th>Phone Number</th>
+                                    </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                    <tr>
+                                        <td>Test</td>
+                                        <td>12345678</td>
+                                        <td>0129282123</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>Test2</td>
+                                        <td>12345678</td>
+                                        <td>0129282123</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Test3</td>
+                                        <td>12345678</td>
+                                        <td>0129282123</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>Test4<</td>
+                                        <td>12345678</td>
+                                        <td>0129282123</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Test5</td>
+                                        <td>12345678</td>
+                                        <td>0129282123</td>
+                                    </tr>
+                                    
+                                    
+                                    </tbody>
+                                </table>        
+                                <br>
+                                                                                
                                 </div><!--end row-->  
                             </div>
                         </div>

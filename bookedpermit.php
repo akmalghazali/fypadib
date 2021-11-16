@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'head.php'?>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Booked Permit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="./assets/images/favicon.ico">
-
-    <!-- DataTables -->
-    <link href="./plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="./plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    
-    <!-- App css -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/jquery-ui.min.css" rel="stylesheet">
-    <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-</head>
 
 <body class="dark-sidenav">
 
@@ -34,7 +10,7 @@
         <div class="topbar-left">
             <a href="main.php" class="logo">
                 <span>
-                    <!--<img src="./assets/images/booking.png" alt="logo-large" class="logo-lg logo-light">-->
+                <img src="./assets/images/mountain.png" alt="logo-large" class="logo-lg logo-light" style=" height: 50px;">
                 </span>
             </a>
         </div>
@@ -255,21 +231,9 @@
                                         <td>12345678</td>
                                         <td>0129282123</td>
                                         <td>Gunung Kinabalu</td>
+                                        <td>Approved</td> 
+                                        <td>Ali</td>
                                         <td>
-                                            <select class="form-control">
-                                                <option>Approved</option>
-                                                <option>Rejected</option>
-                                            </select>
-                                        </td>
-                                        
-                                        <td>
-                                            <select class="form-control">
-                                                <option>Ali</option>
-                                                <option>Abu</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <a href=""><i class="far fa-edit text-info mr-1"></i></a>
                                             <a href=""><i class="far fa-trash-alt text-danger"></i></a>
                                         </td>
                                     </tr>
@@ -283,22 +247,9 @@
                                         <td>12345678</td>
                                         <td>0129282123</td>
                                         <td>Gunung Dayang Bunting</td>
-                                         <td>
-                                            <select class="form-control">
-                                                <option>Approved</option>
-                                                <option>Rejected</option>
-                                            </select>
-                                        </td>
-                                     
-                                    
+                                        <td>Approve</td> 
+                                        <td>Abu</td>
                                         <td>
-                                            <select class="form-control">
-                                                <option>Ali</option>
-                                                <option>Abu</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <a href=""><i class="far fa-edit text-info mr-1"></i></a>
                                             <a href=""><i class="far fa-trash-alt text-danger"></i></a>
                                         </td>
                                     </tr>
@@ -312,22 +263,9 @@
                                         <td>12345678</td>
                                         <td>0129282123</td>
                                         <td>Gunung Ganang</td>
-                                         <td>
-                                            <select class="form-control">
-                                                <option>Approved</option>
-                                                <option>Rejected</option>
-                                            </select>
-                                        </td>
-                                       
-
+                                        <td>No Status</td> 
+                                        <td>No Guider</td>
                                         <td>
-                                            <select class="form-control">
-                                                <option>Ali</option>
-                                                <option>Abu</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <a href=""><i class="far fa-edit text-info mr-1"></i></a>
                                             <a href=""><i class="far fa-trash-alt text-danger"></i></a>
                                         </td>
                                     </tr>
@@ -341,20 +279,9 @@
                                         <td>12345678</td>
                                         <td>0129282123</td>
                                         <td>Bukit Bukau</td>
-                                         <td>
-                                            <select class="form-control">
-                                                <option>Approved</option>
-                                                <option>Rejected</option>
-                                            </select>
-                                        </td>
+                                        <td>Rejected</td> 
+                                        <td>No Guider</td>
                                         <td>
-                                            <select class="form-control">
-                                                <option>Ali</option>
-                                                <option>Abu</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <a href=""><i class="far fa-edit text-info mr-1"></i></a>
                                             <a href=""><i class="far fa-trash-alt text-danger"></i></a>
                                         </td>
                                     </tr>
@@ -368,21 +295,9 @@
                                         <td>12345678</td>
                                         <td>0129282123</td>
                                         <td>Bukit Tinggi Rendah</td>
-                                         <td>
-                                            <select class="form-control">
-                                                <option>Approved</option>
-                                                <option>Rejected</option>
-                                            </select>
-                                        </td>
-
+                                        <td>Rejected</td> 
+                                        <td>No Guider</td>
                                         <td>
-                                            <select class="form-control">
-                                                <option>Ali</option>
-                                                <option>Abu</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <a href=""><i class="far fa-edit text-info mr-1"></i></a>
                                             <a href=""><i class="far fa-trash-alt text-danger"></i></a>
                                         </td>
                                     </tr>
