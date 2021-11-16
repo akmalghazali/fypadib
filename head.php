@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <link rel="shortcut icon" href="./assets/images/mountain.png">
     <link href="../../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
         <link href="../../plugins/lightpick/lightpick.css" rel="stylesheet" />
 
