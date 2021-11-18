@@ -18,7 +18,10 @@
         <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="./assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
         <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
+        
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,700&display=swap');
+</style>
     </head>
 
     <body class="account-body accountbg">
@@ -33,7 +36,7 @@
                                 <div class="px-3">
                                     
                                     <div class="text-center auth-logo-text">
-                                        <h4 class="mt-0 mb-3 mt-5">Let's Get Started</h4>
+                                        <h1 class="mt-0 mb-3 mt-5" style="font-family: 'Cabin', sans-serif;">HIKINGKE</h1>
                                         <p class="text-muted mb-0">Sign in to continue.</p>  
                                     </div> <!--end auth-logo-text-->  
     
