@@ -1,6 +1,4 @@
-<?php include 'head.php'?>
-
-
+<?php include 'header.php'?>
 <body class="dark-sidenav">
 
     <!-- Top Bar Start -->

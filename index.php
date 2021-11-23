@@ -18,10 +18,7 @@
         <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="./assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
         <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" />
-        
-        <style>
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,700&display=swap');
-</style>
+    
     </head>
 
     <body class="account-body accountbg">
@@ -63,18 +60,7 @@
                                             </div>                               
                                         </div><!--end form-group--> 
             
-                                        <div class="form-group row mt-4">
-                                            <div class="col-sm-6">
-                                                <div class="custom-control custom-switch switch-success">
-                                                    <input type="checkbox" class="custom-control-input" id="customSwitchSuccess">
-                                                    <label class="custom-control-label text-muted" for="customSwitchSuccess">Remember me</label>
-                                                </div>
-                                            </div><!--end col--> 
-                                            <div class="col-sm-6 text-right">
-                                                <a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>                                    
-                                            </div><!--end col--> 
-                                        </div><!--end form-group--> 
-            
+                 
                                         <div class="form-group mb-0 row">
                                             <div class="col-12 mt-2">
                                                 <button onclick="window.location.href='./main.php'" class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" type="button">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
@@ -83,9 +69,7 @@
                                     </form><!--end form-->
                                 </div><!--end /div-->
                                 
-                                <div class="m-3 text-center text-muted">
-                                    <p class="">Don't have an account ?  <a href="../authentication/auth-register.html" class="text-primary ml-2">Free Resister</a></p>
-                                </div>
+                         
                             </div><!--end card-body-->
                         </div><!--end card-->
                        
@@ -98,17 +82,8 @@
         
 
 
-        <!-- jQuery  -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/jquery-ui.min.js"></script>
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../assets/js/metismenu.min.js"></script>
-        <script src="../assets/js/waves.js"></script>
-        <script src="../assets/js/feather.min.js"></script>
-        <script src="../assets/js/jquery.slimscroll.min.js"></script>        
-
-        <!-- App js -->
-        <script src="../assets/js/app.js"></script>
+<?php include 'footer.php'?>
+   
         
     </body>
 
