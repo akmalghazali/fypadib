@@ -1,6 +1,12 @@
 <?php include 'header.php'?>
 <?php include 'sidebar.php'?>
+<?php include 'include/connect.php'?>
 
+<?php
+$sql = "SELECT booked.id,booked.name,booked.ic,booked.phoneno,booked.bookplace,permit.status,permit.guider
+        FROM booked INNER JOIN permit ON booked.id=permit.bookedid";
+$result = $conn->query($sql);
+?>
 
     <div class="page-wrapper">
         <!-- Page Content-->
@@ -45,86 +51,30 @@
 
 
                                     <tbody>
-                                    <tr>
-                                        <td>
-                                            <p class="d-inline-block align-middle mb-0">
-                                                <a href="show.php" class="d-inline-block align-middle mb-0 product-name">Test</a> 
-                                                <br> 
-                                            </p>
-                                        </td>
-                                        <td>12345678</td>
-                                        <td>0129282123</td>
-                                        <td>Gunung Kinabalu</td>
-                                        <td>Approved</td> 
-                                        <td>Ali</td>
-                                        <td>
-                                            <a href=""><i class="far fa-trash-alt text-danger"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="d-inline-block align-middle mb-0">
-                                                <a href="" class="d-inline-block align-middle mb-0 product-name">Test2</a> 
-                                                <br> 
-                                            </p>
-                                        </td>
-                                        <td>12345678</td>
-                                        <td>0129282123</td>
-                                        <td>Gunung Dayang Bunting</td>
-                                        <td>Approve</td> 
-                                        <td>Abu</td>
-                                        <td>
-                                            <a href=""><i class="far fa-trash-alt text-danger"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="d-inline-block align-middle mb-0">
-                                                <a href="" class="d-inline-block align-middle mb-0 product-name">Test3</a> 
-                                                <br> 
-                                            </p>
-                                        </td>
-                                        <td>12345678</td>
-                                        <td>0129282123</td>
-                                        <td>Gunung Ganang</td>
-                                        <td>No Status</td> 
-                                        <td>No Guider</td>
-                                        <td>
-                                            <a href=""><i class="far fa-trash-alt text-danger"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="d-inline-block align-middle mb-0">
-                                                <a href="" class="d-inline-block align-middle mb-0 product-name">Test4</a> 
-                                                <br> 
-                                            </p>
-                                        </td>
-                                        <td>12345678</td>
-                                        <td>0129282123</td>
-                                        <td>Bukit Bukau</td>
-                                        <td>Rejected</td> 
-                                        <td>No Guider</td>
-                                        <td>
-                                            <a href=""><i class="far fa-trash-alt text-danger"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="d-inline-block align-middle mb-0">
-                                                <a href="" class="d-inline-block align-middle mb-0 product-name">Test5</a> 
-                                                <br> 
-                                            </p>
-                                        </td>
-                                        <td>12345678</td>
-                                        <td>0129282123</td>
-                                        <td>Bukit Tinggi Rendah</td>
-                                        <td>Rejected</td> 
-                                        <td>No Guider</td>
-                                        <td>
-                                            <a href=""><i class="far fa-trash-alt text-danger"></i></a>
-                                        </td>
-                                    </tr>
+                                        <?php 
+                                            if ($result->num_rows > 0) {
+                                                // output data of each row
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo "<tr>";
+                                                    echo "<td>";
+                                                    echo "<p class='d-inline-block align-middle mb-0'>";
+                                                    echo "<a href='show.php?id=". $row["id"]."' class='d-inline-block align-middle mb-0 product-name'>". $row["name"]."</a> ";
+                                                    echo "<br>";
+                                                    echo "</p>";
+                                                    echo "</td>";
+                                                    echo "<td>". $row["ic"]."</td>";
+                                                    echo "<td>". $row["phoneno"]."</td>";
+                                                    echo "<td>". $row["bookplace"]."</td>";
+                                                    echo "<td>". $row["status"]."</td>";
+                                                    echo "<td>". $row["guider"]."</td>";
+                                                    echo "<td>";
+                                                    echo "<a href='deleteshow.php?id=". $row["id"]."'><i class='far fa-trash-alt text-danger'></i></a>"; 
+                                                    echo "</td>";
+                                                    echo "</tr>";
+                                                    }
+                                                }$conn->close();
+                                        ?>
+                                    
                                     
                                     
                                     </tbody>
@@ -141,8 +91,6 @@
         <!-- end page content -->
     </div>
     <!-- end page-wrapper -->
-
-
 
 
 <?php include 'footer.php'?>
