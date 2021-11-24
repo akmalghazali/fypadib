@@ -11,15 +11,15 @@
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="./assets/images/mountain.png">
-    <link href="../../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
-        <link href="../../plugins/lightpick/lightpick.css" rel="stylesheet" />
+    <link href="plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+        <link href="plugins/lightpick/lightpick.css" rel="stylesheet" />
 
     <!-- App css -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/jquery-ui.min.css" rel="stylesheet">
-    <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
