@@ -70,7 +70,6 @@
                                         <input type="hidden" id="bookedid" name="bookedid" value="<?php echo $data['id'] ?>">
                                         <div class="text-right">
                                         
-                                        <a href="bookedpermit.php"><button type="button" id="cancel" class="btn btn-gradient-info">Cancel</button></a>
                                         <button type="submit" id="butdelete" class="btn btn-gradient-danger">Delete</button>
                                         
                                         </div>
