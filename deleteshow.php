@@ -67,7 +67,7 @@
                                             <input type="text" class="form-control" id="status" name="status" value="<?php echo $data['status'] ?>" readonly>
                                         </div>
                                         </div>
-                                        <input type="hidden" id="id" name="id" value="<?php echo $data['id'] ?>">
+                                        <input type="hidden" id="bookedid" name="bookedid" value="<?php echo $data['id'] ?>">
                                         <div class="text-right">
                                         
                                         <a href="bookedpermit.php"><button type="button" id="cancel" class="btn btn-gradient-info">Cancel</button></a>
@@ -98,7 +98,7 @@
         $(document).ready(function() {
 	        $('#butdelete').on('click', function() {
 		    $("#butdelete").attr("disabled", "disabled");
-		    var id = $('#id').val();
+		    var id = $('#bookedid').val();
 	    	if(id!=""){
 	    		$.ajax({
 	    			url: "include/deletepermit.php",
