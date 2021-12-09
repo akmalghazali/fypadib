@@ -68,13 +68,34 @@ $result = $conn->query($sql);
                                                     echo "<td>". $row["status"]."</td>";
                                                     echo "<td>". $row["guider"]."</td>";
                                                     echo "<td>";
-                                                    echo "<a href='deleteshow.php?id=". $row["id"]."'><i class='far fa-trash-alt text-danger'></i></a>"; 
+                                                    echo "<a data-id='".$row["id"]."' title='Delete Booked' class='open-deletebooked' href='#deleteBookedModal'><i class='far fa-trash-alt text-danger'></i></a>";
                                                     echo "</td>";
                                                     echo "</tr>";
                                                     }
                                                 }$conn->close();
                                         ?>
-                                    
+
+                                                <div class="modal fade" id="deleteBookedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title mt-0" id="exampleModalLabel">Are You Sure To Delete This Booked?</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                            <form id="bookeddeleteform" name="bookeddeleteform" method="post">
+                                                            <input type="text" name="deletebookedid" id="deletebookedid" value=""/>
+                                                            <div style="text-align: right">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" id="deletebookedbut" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                            </div>
+                                                            </form>
+                                                            </div>
+                                                        </div>
+                                                        </div>
                                     
                                     
                                     </tbody>
@@ -95,6 +116,52 @@ $result = $conn->query($sql);
 
 <?php include 'footer.php'?>
 
+<script>
+
+    
+$(document).ready(function() {
+    $('#deletebookedbut').on('click', function() {
+		    $("#deletebookedbut").attr("disabled", "disabled");
+            var deletebookedid = $('#deletebookedid').val();
+	    	if(deletebookedid!=""){
+	    		$.ajax({
+	    			url: "include/deletebooked.php",
+	    			type: "post",
+	    			data: {
+                        deletebookedid: deletebookedid				
+		    		},
+		    		cache: false,
+		    		success: function(dataResult){
+		    		var dataResult = JSON.parse(dataResult);
+		    		if(dataResult.statusCode==200){
+						$("#deletebookedbut").removeAttr("disabled");
+                        alert("Booked Deleted !");
+                        window.location.reload(); 						
+					}
+					else if(dataResult.statusCode==201){
+                    
+					   alert("Error occured !");
+                       window.location.reload(); 		
+					}
+					
+				}
+			    });
+            }
+		
+		else{
+			alert('Please fill Booked Name !');
+		}
+	});
+});
+
+$(document).on("click", ".open-deletebooked", function (e) {
+    e.preventDefault();
+    var _self = $(this);
+    var id = _self.data('id');
+    $("#deletebookedid").val(id);
+    $(_self.attr('href')).modal('show');
+    });
+</script>
 </body>
 
 </html>

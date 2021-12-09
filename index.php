@@ -1,3 +1,32 @@
+<?php
+   include("include/connect.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = mysqli_real_escape_string($conn,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
+      
+      $sql = "SELECT id FROM admin WHERE adminname = '$myusername' and adminpassword = '$mypassword'";
+      $result = mysqli_query($conn,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: main.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +42,11 @@
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
         <!-- App css -->
-        <link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="./assets/css/jquery-ui.min.css" rel="stylesheet">
-        <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="./assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     
     </head>
 
@@ -38,7 +67,7 @@
                                     </div> <!--end auth-logo-text-->  
     
                                     
-                                    <form class="form-horizontal auth-form my-4" action="main.php">
+                                    <form class="form-horizontal auth-form my-4" action="" method="post"> 
             
                                         <div class="form-group">
                                             <label for="username">Username</label>
@@ -46,24 +75,25 @@
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i> 
                                                 </span>                                                                                                              
-                                                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                                <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
                                             </div>                                    
                                         </div><!--end form-group--> 
             
                                         <div class="form-group">
-                                            <label for="userpassword">Password</label>                                            
+                                            <label for="password">Password</label>                                            
                                             <div class="input-group mb-3"> 
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-lock"></i> 
                                                 </span>                                                       
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                                                
                                             </div>                               
                                         </div><!--end form-group--> 
             
                  
                                         <div class="form-group mb-0 row">
                                             <div class="col-12 mt-2">
-                                                <button onclick="window.location.href='./main.php'" class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" type="button">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
+                                                <input type="submit" class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" value="Login">
                                             </div><!--end col--> 
                                         </div> <!--end form-group-->                           
                                     </form><!--end form-->
