@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 04:08 PM
+-- Generation Time: Dec 10, 2021 at 02:50 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `hikingke`
 --
+CREATE DATABASE IF NOT EXISTS `hikingke` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hikingke`;
 
 -- --------------------------------------------------------
 
@@ -27,10 +29,19 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) DEFAULT NULL
+  `id` int(11) NOT NULL,
+  `adminname` varchar(100) DEFAULT NULL,
+  `adminpassword` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `adminname`, `adminpassword`) VALUES
+(1, 'adib', '12345');
 
 -- --------------------------------------------------------
 
@@ -38,6 +49,7 @@ CREATE TABLE `admin` (
 -- Table structure for table `booked`
 --
 
+DROP TABLE IF EXISTS `booked`;
 CREATE TABLE `booked` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
@@ -49,19 +61,13 @@ CREATE TABLE `booked` (
   `payment` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `booked`
---
-
-INSERT INTO `booked` (`id`, `name`, `ic`, `phoneno`, `bookplace`, `bookdate`, `booktime`, `payment`) VALUES
-(1, 'Akmal', '99110703593', '01129223970', 'Gunung Stone', '2021-11-26', '07:30:00', 100);
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `hiker`
 --
 
+DROP TABLE IF EXISTS `hiker`;
 CREATE TABLE `hiker` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
@@ -76,19 +82,13 @@ CREATE TABLE `hiker` (
 -- Table structure for table `permit`
 --
 
+DROP TABLE IF EXISTS `permit`;
 CREATE TABLE `permit` (
   `id` int(11) NOT NULL,
   `status` varchar(100) DEFAULT NULL,
   `guider` varchar(100) DEFAULT NULL,
   `bookedid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `permit`
---
-
-INSERT INTO `permit` (`id`, `status`, `guider`, `bookedid`) VALUES
-(1, 'No Status', 'Ali', 1);
 
 --
 -- Indexes for dumped tables
@@ -98,7 +98,7 @@ INSERT INTO `permit` (`id`, `status`, `guider`, `bookedid`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `booked`
@@ -125,10 +125,16 @@ ALTER TABLE `permit`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `booked`
 --
 ALTER TABLE `booked`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `hiker`
@@ -140,7 +146,7 @@ ALTER TABLE `hiker`
 -- AUTO_INCREMENT for table `permit`
 --
 ALTER TABLE `permit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
